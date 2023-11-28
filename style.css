@@ -1,0 +1,71 @@
+html {
+  display: flex;
+  justify-content: right;
+  margin: 0px;
+  padding: 0px;
+  transform: scale(90%);
+}
+
+tbody {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 200px;
+}
+
+td {
+  padding-top: 10px;
+  /* border: 1px solid black; */
+  width: 124px;
+  height: 93px;
+  background-image: url("Bord.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  & * {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+tr {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 5px;
+}
+
+.door{
+  margin-right: 50px;
+}
+
+.top {
+  margin-left: 100px;
+}
+
+p {
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+.right {
+  transform: rotate(90deg);
+  & p{
+    transform: rotate(-90deg);
+  }
+}
+
+.left {
+  transform: rotate(-90deg);
+  & p{
+    transform: rotate(90deg);
+  }
+}
+
+.down {
+  transform: rotate(180deg);
+  & p{
+    transform: rotate(180deg);
+  }
+}
+
