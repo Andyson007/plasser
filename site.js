@@ -1,13 +1,11 @@
-let names = "";
-fetch("names.json")
-  .then(response => response.json())
-  .then(json => {names =  json["names"]});
+names = localStorage.getItem('kart').split(',');
 
-function scramble(size) {
+console.log(names);
 
-  let currentindex = size;
-  while (currentindex > 0) {
-    const swap = Math.floor(Math.random() * currentindex);
+function scramble() {
+  let currentindex = names.length-1;
+  while (currentindex > 1) {
+    const swap = Math.floor(Math.random() * (currentindex-1));
     const a = names[swap];
 
     names[swap] = names[currentindex];
@@ -15,6 +13,7 @@ function scramble(size) {
     currentindex--;
   }
   render();
+  localStorage.setItem('kart', names)
 }
 
 function render() {
@@ -25,7 +24,5 @@ function render() {
     }
   }
 }
-let i = names.length - 1;
 
-setInterval(() => scramble(i), 1)
-setInterval(() => { i-- }, 500)
+scramble()
