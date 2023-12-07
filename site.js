@@ -1,11 +1,18 @@
-names = localStorage.getItem('kart').split(',');
+let names = [];
+if (localStorage.getItem('kart') === null) {
+  for (let i = 0; i < 16; i++) {
+    names.push(i);
+  }
+} else {
+  names = localStorage.getItem('kart').split(',');
+}
 
 console.log(names);
 
 function scramble() {
-  let currentindex = names.length-1;
+  let currentindex = names.length - 1;
   while (currentindex > 1) {
-    const swap = Math.floor(Math.random() * (currentindex-1));
+    const swap = Math.floor(Math.random() * (currentindex - 1));
     const a = names[swap];
 
     names[swap] = names[currentindex];
